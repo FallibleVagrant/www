@@ -1,0 +1,161 @@
+header {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+/* The button you press on mobile to bring up navigation. */
+#mobile-navbutton {
+	/* Assumed that you are on desktop; media query fixes this later. */
+	display: none;
+
+	/* Make it look like the other buttons. */
+	cursor: pointer;
+	color: #eee;
+	text-decoration: none;
+	font-family: ui-monospace;
+	font-weight: bold;
+	font-size: 1.2rem;
+	padding: 0.5rem 0.75rem;
+	margin: 0.5rem 2rem;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+	user-select: none;
+}
+
+/* Mobile users can't see this, but it's here for philosophical completeness's sake. */
+#mobile-navbutton:hover {
+	background-color: #eee;
+	color: #333;
+}
+
+/* This is part of the 'checkbox trick' to keep CSS state on whether the navmenu is open or not.
+ * The checkbox is never displayed.
+ *
+ * https://paulund.co.uk/how-to-style-a-checkbox-with-css
+ * https://www.w3schools.com/howto/howto_css_switch.asp
+ */
+#nav-checkbox {
+	display: none;
+}
+
+/* Small hack to make mobile-navbar-container position starting from mobile-navbutton. */
+#mobile-navmenu {
+	position: relative;
+}
+
+/* Wraps the mobile-navbar.
+ * display is none when desktop-navbar is active.
+ * visibility is hidden when mobile-navbutton is unchecked.
+ */
+#mobile-navbar-container {
+	display: none;
+	visibility: hidden;
+	position: absolute;
+	top: 50px;
+	right: 100px;
+	width: 50vw;
+}
+
+#mobile-navbar {
+	display: flex;
+	padding: 5vw 20vw;
+	align-items: center;
+	justify-items: left;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	background-color: seagreen;
+}
+
+/* This selector will trigger when the checkbox is checked,
+ * making mobile-navbar-container visible.
+ */
+#mobile-navmenu input:checked ~ #mobile-navbar-container {
+	visibility: visible;
+}
+
+#desktop-navbar {
+	display: flex;
+	padding: 0.5rem 2rem;
+	padding-left: 0px;
+	align-items: center;
+	justify-items: left;
+	gap: 0.5rem;
+	float: right;
+}
+
+nav a {
+	color: #eee;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+	padding: 0.5rem 0.75rem;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+nav a:hover {
+	background-color: #eee;
+	color: #333;
+}
+
+.logo {
+	margin-right: auto;
+	padding: 0.5rem 2rem;
+	padding-right: 0px;
+}
+
+.logo a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: seagreen;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.logo img {
+	height: 3.05rem;
+}
+
+.logo-text {
+	font-family: serif;
+	font-weight: bold;
+	font-size: 1.7rem;
+	padding: 0.5rem 0.75rem;
+	white-space: nowrap;
+}
+
+.logo a:hover {
+	background-color: seagreen;
+	color: #333;
+}
+
+/* Switch to mobile-nav systems. */
+@media (max-width: 1000px) {
+	#desktop-navbar {
+		display: none;
+	}
+	#mobile-navbutton {
+		display: initial;
+	}
+	#mobile-navbar-container {
+		display: initial;
+	}
+}
+
+/* Reduce the sizes of various things so the navbar fits. */
+@media (max-width: 770px) {
+	.logo {
+		padding: 0.5rem min(2rem, 4vw);
+		padding-right: 0px;
+	}
+	.logo img {
+		height: min(3.05rem, 9vw);
+	}
+	.logo-text {
+		font-size: min(1.7rem, 3.7vw);
+	}
+	#mobile-navbutton {
+		margin: 0.5rem min(2rem, 4vw);
+		margin-left: 0px;
+	}
+}

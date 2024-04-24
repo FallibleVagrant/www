@@ -1,0 +1,6 @@
+This favicon ("Whisper in Seagreen") was generated using the following font:
+
+- Font Title: Whisper
+- Font Author: Copyright 1993-2022 The Whisper Project Authors (https://github.com/googlefonts/whisper)
+- Font Source: https://fonts.gstatic.com/s/whisper/v5/q5uHsoqtKftx74K9milCBxxdmYU.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

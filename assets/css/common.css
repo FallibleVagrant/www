@@ -1,0 +1,66 @@
+html {
+	font-size: 1rem;
+	font-family: ui-monospace;
+	background-color: #181818;
+	color: #eee;
+}
+
+body {
+	margin: 0px;
+}
+
+/* Trick to stop nav links from transitioning from seagreen before page fully loads. */
+a {
+	color: #eee;
+}
+/* Same for the logo, but reverse. */
+.logo a {
+	color: seagreen;
+}
+
+/* Links in paragraphs are seagreen. */
+p a {
+	color: seagreen;
+}
+
+/* Add external link image when opening to new tab, which is always to external site. */
+p a[target="_blank"]::after {
+	content: "";
+	mask-image: url('../img/icons8-external-link.svg');
+	mask-size: cover;
+	display: inline-flex;
+	background-color: seagreen;
+	width: .8rem;
+	height: .8rem;
+	position: relative;
+	top: 2px;
+	margin-left: 4px;
+}
+
+code {
+	color: #ea1a0b;
+	background-color: #2a2a2a;
+	font-size: 1.3em;
+	border-radius: 10px;
+	padding: 0.1em 0.5em;
+}
+
+.container {
+	margin: 0px auto;
+	width: 80vw;
+}
+
+@media (max-width: 600px) {
+	.container {
+		width: 100%;
+	}
+}
+
+.inset {
+	padding: 0px 20px;
+}
+
+hr {
+	border: solid;
+	color: inherit;
+}
