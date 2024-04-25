@@ -77,10 +77,40 @@ header {
  */
 #mobile-navmenu input:checked ~ #mobile-navbar {
 	visibility: visible;
+	/* Expand into view. */
+	animation: expandin 0.1s 1 forwards ease-out;
 }
 /* Also make the navbutton have a border. */
 #mobile-navmenu input:checked + #mobile-navbutton {
 	box-shadow: inset 1px 0 0 #ddd,inset 0 1px 0 #ddd,inset -4px 0 0 seagreen;
+}
+/* #mobile-navbar links fade into view in time with the expandin animation,
+ * otherwise they stretch into view. */
+#mobile-navmenu input:checked ~ #mobile-navbar a {
+	opacity: 0;
+	animation: fadein 0.11s 0.04s 1 forwards ease-out;
+}
+
+@keyframes expandin {
+	0% {
+		opacity: 0;
+		transform: scale(1,0);
+		transform-origin: top;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1,1);
+		transform-origin: top;
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 #desktop-navbar {
