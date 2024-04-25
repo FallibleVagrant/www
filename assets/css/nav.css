@@ -9,6 +9,11 @@ header {
 	/* Assumed that you are on desktop; media query fixes this later. */
 	display: none;
 
+	/* Make the button appear over the navbar. */
+	z-index: 1;
+	position: relative;
+	background-color: #181818;
+
 	/* Make it look like the other buttons. */
 	cursor: pointer;
 	color: #eee;
@@ -38,40 +43,44 @@ header {
 	display: none;
 }
 
-/* Small hack to make mobile-navbar-container position starting from mobile-navbutton. */
+/* Small hack to make mobile-navbar position starting from mobile-navbutton. */
 #mobile-navmenu {
 	position: relative;
 }
 
-/* Wraps the mobile-navbar.
- * display is none when desktop-navbar is active.
+/* display is none when desktop-navbar is active.
  * visibility is hidden when mobile-navbutton is unchecked.
  */
-#mobile-navbar-container {
+#mobile-navbar {
 	display: none;
 	visibility: hidden;
-	position: absolute;
-	top: 50px;
-	right: 100px;
-	width: 50vw;
-}
 
-#mobile-navbar {
-	display: flex;
-	padding: 5vw 20vw;
+	/* Position navbar exactly under navbutton. */
+	position: absolute;
+	top: 30px;
+	right: min(2rem, 4vw);
+	margin-top: 1px;
+
+	width: 70vw;
+	padding: 3rem 10px;
 	align-items: center;
 	justify-items: left;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 1rem;
 
-	background-color: seagreen;
+	background-color: #181818;
+	box-shadow: inset 1px 0 0 #eee,inset 0 -1px 0 #eee,inset 0 1px 0 #eee,inset -4px 0 0 seagreen;
 }
 
 /* This selector will trigger when the checkbox is checked,
- * making mobile-navbar-container visible.
+ * making mobile-navbar visible.
  */
-#mobile-navmenu input:checked ~ #mobile-navbar-container {
+#mobile-navmenu input:checked ~ #mobile-navbar {
 	visibility: visible;
+}
+/* Also make the navbutton have a border. */
+#mobile-navmenu input:checked + #mobile-navbutton {
+	box-shadow: inset 1px 0 0 #ddd,inset 0 1px 0 #ddd,inset -4px 0 0 seagreen;
 }
 
 #desktop-navbar {
@@ -96,6 +105,11 @@ nav a {
 nav a:hover {
 	background-color: #eee;
 	color: #333;
+}
+
+/* Pad links in the mobile-navbar more. */
+#mobile-navbar a {
+	padding: 1.5rem 20vw;
 }
 
 .logo {
@@ -137,8 +151,8 @@ nav a:hover {
 	#mobile-navbutton {
 		display: initial;
 	}
-	#mobile-navbar-container {
-		display: initial;
+	#mobile-navbar {
+		display: flex;
 	}
 }
 
