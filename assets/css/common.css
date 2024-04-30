@@ -50,7 +50,7 @@ code {
 	width: 80vw;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 	.container {
 		width: 100%;
 	}

@@ -4,6 +4,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Fallible Homepage</title>
+		<!--
+		<link rel="preload" href="assets/fonts/Whisper-Regular.ttf" as="font" type="font/ttf" />
+		<link rel="preload" href="assets/fonts/Hack-Regular.ttf" as="font" type="font/ttf" />
+		<link rel="preload" href="assets/fonts/TerminusTTF-4.46.0.ttf" as="font" type="font/ttf" />
+		-->
 		<link rel="stylesheet" href="assets/css/common.css" />
 		<link rel="stylesheet" href="assets/css/nav.css" />
 		<link rel="stylesheet" href="assets/css/home.css" />
@@ -29,17 +34,17 @@
 					<a href="about.html">About</a>
 				</nav>
 
-				<div id="mobile-navmenu">
-					<!-- Part of the 'checkbox trick' for stateful CSS. -->
-					<input id="nav-checkbox" type="checkbox" />
-					<label id="mobile-navbutton" for="nav-checkbox">More</label>
+				<details id="mobile-navbutton">
+					<summary>
+						More
+					</summary>
 
 					<nav id="mobile-navbar">
 						<a href="projects.html">Projects</a>
 						<a href="links.html">Links</a>
 						<a href="about.html">About</a>
 					</nav>
-				</div>
+				</details>
 			</header>
 			<hr />
 			<main class="inset">
