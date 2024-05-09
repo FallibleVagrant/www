@@ -3,6 +3,7 @@ html {
 	font-family: ui-monospace;
 	background-color: #181818;
 	color: #eee;
+	scroll-behavior: smooth;
 }
 
 body {
