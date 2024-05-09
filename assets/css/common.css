@@ -1,7 +1,7 @@
 html {
 	font-size: 1rem;
 	font-family: ui-monospace;
-	background-color: #181818;
+	background-color: #1d1d1d;
 	color: #eee;
 	scroll-behavior: smooth;
 }
@@ -49,6 +49,7 @@ code {
 .container {
 	margin: 0px auto;
 	width: 80vw;
+	background-color: #181818;
 }
 
 @media (max-width: 700px) {
@@ -57,11 +58,17 @@ code {
 	}
 }
 
+main {
+	margin-top: 20px;
+}
+
 .inset {
 	padding: 0px 20px;
 }
 
 hr {
-	border: solid;
-	color: inherit;
+	border: 1px solid;
+	/* color: inherit; */
+	/* color: #00875f; */
+	color: #484848;
 }

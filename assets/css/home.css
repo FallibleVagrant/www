@@ -20,15 +20,21 @@ main {
 */
 main {
 	display: grid;
-	gap: 5px;
+	gap: 50px;
 }
 
 section {
 	//border: 2px #00875f solid;
 	background-color: #00875f;
-	clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10px);
+	clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 20px);
 }
 
 section > div {
 	padding: 7px 10px;
+	padding-left: 20px;
+}
+
+#welcome {
+	padding: 20px 0px;
+	width: 500px;
 }

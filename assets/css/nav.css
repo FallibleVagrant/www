@@ -1,7 +1,9 @@
-header {
-	margin-top: 20px;
+#nav-heading {
+	padding-top: 20px;
+	padding-bottom: 13px;
 	display: flex;
 	align-items: center;
+	background-color: #2a5f5a;
 }
 
 /* The button you press on mobile to bring up navigation. */
@@ -145,6 +147,7 @@ nav a:hover {
 	text-decoration: none;
 	color: seagreen;
 	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+	background-color: #2a4f4c;
 }
 
 .logo img {
@@ -157,6 +160,7 @@ nav a:hover {
 	font-size: 27.2px;
 	padding: 8px 12px;
 	white-space: nowrap;
+	text-shadow: 1px 1px 0px #2a3d3a;
 }
 
 .logo a:hover {
