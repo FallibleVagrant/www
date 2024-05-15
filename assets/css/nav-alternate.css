@@ -1,0 +1,196 @@
+#nav-heading {
+	padding-top: 20px;
+	padding-bottom: 13px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+}
+
+/* The button you press on mobile to bring up navigation. */
+#mobile-navbutton {
+	/* Assumed that you are on desktop; media query fixes this later. */
+	display: none;
+	
+	/* Small hack to make mobile-navbar position starting from mobile-navbutton. */
+	position: relative;
+}
+
+/* Make it look like the other buttons. */
+#mobile-navbutton > summary {
+	/* Remove the triangle from #mobile-navbutton. */
+	list-style-type: none;
+
+	/* Make the button appear over the navbar. */
+	z-index: 1;
+	background-color: #181818;
+
+	cursor: pointer;
+	color: #eee;
+	text-decoration: none;
+	font-family: ui-monospace;
+	font-weight: bold;
+	font-size: 19.2px;
+	padding: 8px 12px;
+	margin: 8px 32px;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+	user-select: none;
+}
+
+/* Mobile users can't see this, but it's here for philosophical completeness's sake. */
+#mobile-navbutton > summary:hover {
+	box-shadow: inset 0 0 0 1px #00875f;
+}
+
+/* display is none when desktop-navbar is active.
+ * visibility is hidden when mobile-navbutton is unchecked.
+ */
+#mobile-navbar {
+	display: none;
+	visibility: hidden;
+
+	/* Position navbar exactly under navbutton. */
+	position: absolute;
+	top: 47px;
+	right: min(32px, 4vw);
+
+	width: 70vw;
+	padding: 48px 10px;
+	align-items: center;
+	justify-items: left;
+	flex-direction: column;
+	gap: 16px;
+
+	background-color: #181818;
+	box-shadow: inset 1px 0 0 #eee,inset 0 -1px 0 #eee,inset 0 1px 0 #eee,inset -4px 0 0 seagreen;
+}
+
+/* This selector will trigger when the checkbox is checked,
+ * making mobile-navbar visible.
+ */
+#mobile-navbutton[open] > #mobile-navbar {
+	visibility: visible;
+	/* Expand into view. */
+	animation: expandin 0.1s 1 forwards ease-out;
+}
+/* Also make the navbutton have a border. */
+#mobile-navbutton[open] > summary {
+	box-shadow: inset 1px 0 0 #ddd,inset 0 1px 0 #ddd,inset -4px 0 0 seagreen;
+}
+/* #mobile-navbar links fade into view in time with the expandin animation,
+ * otherwise they stretch into view. */
+#mobile-navbutton[open] > #mobile-navbar a {
+	opacity: 0;
+	animation: fadein 0.11s 0.04s 1 forwards ease-out;
+}
+
+@keyframes expandin {
+	0% {
+		opacity: 0;
+		transform: scale(1,0);
+		transform-origin: top;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1,1);
+		transform-origin: top;
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+#desktop-navbar {
+	display: flex;
+	padding: 8px 32px;
+	padding-left: 0px;
+	align-items: center;
+	justify-items: left;
+	gap: 8px;
+	float: right;
+}
+
+nav a {
+	color: #eee;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 19.2px;
+	padding: 8px 12px;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+nav a:hover {
+	box-shadow: inset 0 0 0 1px #00875f;
+}
+
+/* Pad links in the mobile-navbar more. */
+#mobile-navbar a {
+	padding: 24px 20vw;
+}
+
+.logo {
+	margin-right: auto;
+	padding: 8px 32px;
+	padding-right: 0px;
+}
+
+.logo a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: seagreen;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.logo img {
+	height: 48.8px;
+}
+
+.logo-text {
+	font-family: serif;
+	font-weight: bold;
+	font-size: 27.2px;
+	padding: 8px 12px;
+	white-space: nowrap;
+	text-shadow: 1px 1px 0px #2a3d3a;
+}
+
+.logo a:hover {
+	box-shadow: inset 0 0 0 1px seagreen;
+}
+
+/* Switch to mobile-nav systems. */
+@media (max-width: 1000px) {
+	#desktop-navbar {
+		display: none;
+	}
+	#mobile-navbutton {
+		display: initial;
+	}
+	#mobile-navbar {
+		display: flex;
+	}
+}
+
+/* Reduce the sizes of various things so the navbar fits. */
+@media (max-width: 770px) {
+	.logo {
+		padding: 8px min(32px, 4vw);
+		padding-right: 0px;
+	}
+	.logo img {
+		height: min(48.8px, 9vw);
+	}
+	.logo-text {
+		font-size: min(27.2px, 3.7vw);
+	}
+	#mobile-navbutton > summary {
+		margin: 8px min(32px, 4vw);
+		margin-left: 0px;
+	}
+}

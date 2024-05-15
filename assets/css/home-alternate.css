@@ -1,0 +1,36 @@
+main {
+	display: grid;
+	gap: 20px;
+}
+
+section {
+	border: 1px #00875f solid;
+	padding: 20px 0px;
+	/* background-color: #00875f; */
+	/* clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px); */
+}
+
+section > div {
+	padding: 4px 20px;
+	/* padding-left: 20px; */
+}
+
+#welcome {
+	width: 500px;
+}
+
+#changelog {
+	width: 500px;
+}
+
+section header {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #00875f;
+}
+
+ul {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
