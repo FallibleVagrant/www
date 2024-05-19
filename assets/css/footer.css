@@ -1,4 +1,16 @@
 #page-footer {
 	margin-top: 50px;
-	background-color: var(--test-color);
+	background-color: var(--nav-bg-color);
+	min-height: 200px;
+
+	/* Hack to get position small text to bottom-left of footer. */
+	position: relative;
+}
+
+#page-footer #bottom-left {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+
+	padding: 4px 20px;
 }
