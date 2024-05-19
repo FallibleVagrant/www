@@ -48,6 +48,8 @@ if __name__ == "__main__":
     if src_dir == None:
         src_dir = "./"
 
+    # NOTE: The environment src_dir is prepended to both template files and the fragments they need to render.
+    # I wish it *didn't* do this so we could specify only a fragments directory, but I don't know how to specify that if it exists and this works well enough for now.
     env = Environment(
         loader=FileSystemLoader(src_dir),
         autoescape=select_autoescape()
