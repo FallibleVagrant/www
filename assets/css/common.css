@@ -1,8 +1,16 @@
+:root {
+	--nav-bg-color: #2a5f5a;
+	--logo-color: seagreen;
+	--off-white: #eee;
+	--accent-color: #00875f;
+	--page-bg-color: #181818;
+}
+
 html {
 	font-size: 1rem;
 	font-family: ui-monospace;
 	background-color: #1d1d1d;
-	color: #eee;
+	color: var(--off-white);
 	scroll-behavior: smooth;
 }
 
@@ -12,16 +20,16 @@ body {
 
 /* Trick to stop nav links from transitioning from seagreen before page fully loads. */
 a {
-	color: #eee;
+	color: var(--off-white);
 }
 /* Same for the logo, but reverse. */
 .logo a {
-	color: seagreen;
+	color: var(--logo-color);
 }
 
 /* Links in paragraphs are seagreen. */
 p a {
-	color: seagreen;
+	color: var(--logo-color);
 }
 
 /* Add external link image when opening to new tab, which is always to external site. */
@@ -30,7 +38,7 @@ p a[target="_blank"]::after {
 	mask-image: url('../img/icons8-external-link.svg');
 	mask-size: cover;
 	display: inline-flex;
-	background-color: seagreen;
+	background-color: var(--logo-color);
 	width: .8rem;
 	height: .8rem;
 	position: relative;
@@ -49,7 +57,7 @@ code {
 .container {
 	margin: 0px auto;
 	width: 80vw;
-	background-color: #181818;
+	background-color: var(--page-bg-color);
 }
 
 @media (max-width: 700px) {
