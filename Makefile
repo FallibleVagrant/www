@@ -7,7 +7,8 @@ all: $(pages)
 # A static pattern rule.
 # It tells make that each page in $(pages) has a dependency on its respective %.html.jinja file.
 # That means it knows to recompile when we update a source file.
-$(pages): %.html: src/%.html.jinja
+# Also, jinja files are dependent on html fragments, so include them too.
+$(pages): %.html: src/%.html.jinja src/nav_header.frag.html src/page_footer.frag.html
 
 # How to compile each page.
 $(pages):
