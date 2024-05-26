@@ -8,6 +8,23 @@ section {
 	padding: 20px 0px;
 	background-color: var(--accent-color);
 	clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px);
+
+	animation: 5s glitchin;
+}
+
+@keyframes glitchin {
+	0% {
+		filter: opacity(0%);
+	}
+
+	50% {
+		filter: opacity(100%);
+		transform: translate(10px, 20px);
+	}
+
+	100% {
+		transform: translate(0px, 0px);
+	}
 }
 
 section > div {
