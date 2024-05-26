@@ -12,5 +12,7 @@
 	left: 0px;
 	bottom: 0px;
 
-	padding: 4px 20px;
+	padding: 10px 15px;
+	filter: opacity(40%);
+	text-shadow: 1px 1px 0px #2a3d3a;
 }
