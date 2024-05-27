@@ -1,5 +1,5 @@
 # All of the pages we want to compile.
-pages := index.html about.html blog.html links.html projects.html
+pages := index.html about.html posts.html links.html projects.html
 
 # The default rule.
 all: $(pages)
