@@ -7,23 +7,86 @@ section {
 	/* border: 2px #00875f solid; */
 	padding: 20px 0px;
 	background-color: var(--accent-color);
-	clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px);
 
-	animation: 5s glitchin;
+	/* Carefully cut a corner out of the block; leave space so it doesn't disrupt any drop-shadows if we have any. */
+	/* clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px); */
+	clip-path: polygon(30px 0, 0px 0px, 0px -200%, 200% -200%, 200% 200%, -200% 200%, -200% -200%, 0px -200%, 0% 25px);
+
+	/* filter: opacity(0%); */
+	animation-name:       glitch-appear-in, glitch-color-in, glitch-move-in;
+	animation-delay:      1s,               1s,              1s;
+	animation-duration:   0s,            0.11s,           0.11s;
+	animation-fill-mode:  backwards,        none,            none;
+	/* animation: 1s 0.1s forwards glitch-appear-in ease-out; */
+	/* animation-composition: accumulate; */
 }
 
-@keyframes glitchin {
-	0% {
+@keyframes glitch-appear-in {
+	0%, 49.99% {
 		filter: opacity(0%);
 	}
-
-	50% {
+	50%, 100% {
 		filter: opacity(100%);
-		transform: translate(10px, 20px);
+	}
+}
+
+@keyframes glitch-move-in {
+	0%, 9.99% {
+		transform: translate(32px, 16px);
+	}
+
+	10%, 14.99% {
+		transform: translate(-16px, -8px);
+	}
+
+	15%, 29.99% {
+		transform: translate(4px, -2px);
+	}
+
+	30%, 39.99% {
+		transform: translate(-2px, 0px);
+	}
+
+	40%, 100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+@keyframes glitch-color-in {
+	0%, 34.99% {
+		box-shadow:
+			/* We use colors from :root separated into rgb-ish. */
+			16px 32px #eee,
+			-32px -4px #008700,
+			64px -32px #00005f;
+	}
+
+	35%, 64.99% {
+		/* Switch up the ordering. */
+		box-shadow:
+			16px 16px #008700,
+			-16px 8px #00005f,
+			32px -32px #eee;
+	}
+
+	65%, 79.99% {
+		box-shadow:
+			-8px 16px #00005f,
+			8px -4px #eee,
+			-32px 2px #008700;
+
+	}
+
+	80%, 99.99% {
+		box-shadow:
+			2px 4px #eee,
+			4px -2px #00005f,
+			-4px 0px #008700;
+
 	}
 
 	100% {
-		transform: translate(0px, 0px);
+		box-shadow: none;
 	}
 }
 
