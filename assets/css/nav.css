@@ -54,6 +54,8 @@
 	top: 47px;
 	right: min(32px, 4vw);
 
+	z-index: 1;
+
 	width: 70vw;
 	padding: 48px 10px;
 	align-items: center;
