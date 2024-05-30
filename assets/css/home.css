@@ -50,6 +50,10 @@ section > div {
 	width: 500px;
 }
 
+#changelog {
+	width: 500px;
+}
+
 section header {
 	font-size: 1.2rem;
 	font-weight: bold;

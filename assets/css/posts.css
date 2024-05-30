@@ -1,0 +1,26 @@
+h1 {
+	margin: 0;
+}
+
+a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+main header > .subtitle {
+	font-style: italic;
+	color: var(--gray);
+}
+
+main header > .header-date-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: baseline;
+	column-gap: 50px;
+	justify-content: space-between;
+}
+
+date {
+	font-style: italic;
+	color: var(--gray);
+}
