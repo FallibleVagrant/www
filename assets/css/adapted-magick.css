@@ -1,0 +1,27 @@
+/* magick.css was used as reference for this file.
+* https://github.com/wintermute-cell/magick.css/blob/master/magick.css
+* Credit to winterveil.
+*/
+
+h1 {
+	margin: 0;
+	font-size: 2.0rem;
+}
+
+p a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+header > .subtitle {
+	font-style: italic;
+	font-size: 1.2rem;
+}
+
+header > .header-date-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: baseline;
+	column-gap: 50px;
+	justify-content: space-between;
+}

@@ -25,6 +25,7 @@ section {
 }
 
 section > div {
+	padding: 4px 20px;
 	animation: 1s 0.15s backwards fade-in ease-out;
 }
 
@@ -32,7 +33,7 @@ section > div {
 #img {
 	color: var(--off-white);
 	border: 1px solid var(--off-white);
-	background-color: #1f1f1f;
+	background-color: var(--light-gray);
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -315,11 +316,6 @@ section > div {
 	100% {
 		opacity: 1;
 	}
-}
-
-section > div {
-	padding: 4px 20px;
-	/* padding-left: 20px; */
 }
 
 #welcome {

@@ -4,15 +4,17 @@ h1 {
 
 a {
 	color: var(--accent-color);
-	text-decoration: none;
+	/* text-decoration: none; */
 }
 
-main header > .subtitle {
+header > .subtitle {
 	font-style: italic;
-	color: var(--gray);
+	padding-top: 3px;
+	/* color: var(--gray); */
 }
 
-main header > .header-date-container {
+/* Put datetime to the right of header, unless there isn't enough space. */
+header > .header-date-container {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: baseline;
@@ -20,7 +22,25 @@ main header > .header-date-container {
 	justify-content: space-between;
 }
 
+section div > p {
+	padding: 10px 0px;
+	margin: 0px 0px;
+}
+
 date {
 	font-style: italic;
-	color: var(--gray);
+	/* color: var(--gray); */
+}
+
+section {
+	padding: 10px 0px;
+	padding-bottom: 5px;
+	margin-bottom: 17px;
+	background-color: var(--light-gray);
+	border: 1px solid var(--off-white);
+	max-width: 770px;
+}
+
+section > div {
+	padding: 4px 20px;
 }
