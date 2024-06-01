@@ -86,8 +86,8 @@ p a[target="_blank"]::after {
 	mask-image: url('../img/icons8-external-link.svg');
 	mask-size: cover;
 	background-color: var(--logo-color);
-	width: 12.8px;
-	height: 12.8px;
+	width: 16px;
+	height: 16px;
 	position: relative;
 	top: 2px;
 	margin-left: 4px;
