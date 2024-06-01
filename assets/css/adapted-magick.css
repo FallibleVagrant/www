@@ -6,11 +6,29 @@
 h1 {
 	margin: 0;
 	font-size: 2.0rem;
+	color: var(--accent-color);
 }
 
 p a {
 	color: var(--accent-color);
 	text-decoration: none;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+main > header, main > section, main > footer {
+	border: 1px solid var(--pane-border-color);
+	background-color: var(--pane-bg-color);
+	padding: 20px 20px;
+	margin-bottom: 15px;
+}
+
+main > section {
+	margin-bottom: 10px;
 }
 
 header > .subtitle {
@@ -24,4 +42,26 @@ header > .header-date-container {
 	align-items: baseline;
 	column-gap: 50px;
 	justify-content: space-between;
+}
+
+main > section > p {}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	display: inline-block;
+	border: 1px solid var(--pane-border-color);
+	background-color: var(--pane-bg-color);
+	padding: 20px 40px;
+
+	max-width: 100%;
+	margin: 0px auto;
+	text-align: center;
+}
+
+figcaption {
+	margin-top: 10px;
 }
