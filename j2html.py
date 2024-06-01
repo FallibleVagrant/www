@@ -67,8 +67,12 @@ if __name__ == "__main__":
         eprint("Could not render template; could not find:", e)
         eprint("Set a source directory with -d so html fragments are visible to the environment.")
         exit(-1)
-    soup = BeautifulSoup(rendered_template, 'html.parser')
-    output = soup.prettify(formatter="html")
+
+    # NOTE: Soup will separate <a> tags onto new lines, which causes a visual oddity when underlined.
+    # soup = BeautifulSoup(rendered_template, 'html.parser')
+    # output = soup.prettify(formatter="html")
+    output = rendered_template;
+
     if output_path == None:
         print(output)
     else:
