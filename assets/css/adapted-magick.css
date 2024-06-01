@@ -1,4 +1,4 @@
-/* magick.css was used as reference for this file.
+/* magick.css was used as reference for this file, and some parts are copy-pasted.
 * https://github.com/wintermute-cell/magick.css/blob/master/magick.css
 * Credit to winterveil.
 */
@@ -62,4 +62,80 @@ figure {
 
 figcaption {
 	margin-top: 10px;
+}
+
+
+/* ============================================================================================================================ */
+/*   Sidenotes & Asides  ====================================================================================================== */
+/* ============================================================================================================================ */
+
+/*
+    1) On mobile devices, sidenotes behave the same as asides.
+    2) Float the sidenotes to the right.
+    3) Make sure the sidenotes don't clash.
+    4) Set the width of the sidenotes to 40% of the main column.
+    5) Add padding, margins and a border for better visual separation.
+    6) Adjust typography to be more compact.
+*/
+.sidenote, aside {
+	float: right; /* 2 */
+	clear: right; /* 3 */
+	width: 30%; /* 4 */
+	margin: 16px 0px 16px 32px; /* 5 */
+	padding: 8px 8px 8px 16px; /* 5 */
+	border-left: 3px solid var(--off-white); /* 5 */
+	font-size: 16px; /* 6 */
+	/* line-height: 1.2; /1* 6 *1/ */
+}
+
+/* Prevent double top margins */
+aside h1, aside h2, aside h3, aside h4 {
+	margin-top: 0;
+}
+
+/*
+    1) Set the distance from the main column.
+    2) Set the width of the element to a little less than the remaining space on one side, limited to 40% of the main column.
+    3) Remove any values set for the mobile version of the sidenotes.
+    4) Set the width to the variable defined above.
+    5) Set a negative right margin to (self-width + distance-from-main) to pull the sidenote to the right.
+*/
+/* Sadly, CSS does not support var() and rem in media queries, so we have to hardcode pixels. */
+/* This will break if the main column width is changed without adjusting this media query.    */
+@media (min-width: calc(1500px)) {
+	.sidenote {
+		--distance-from-main: 48px; /* 1 */
+		--self-width: min(calc((100vw - 1000px)/2 - (var(--distance-from-main))), 40%); /* 2 */
+		margin: 0; /* 3 */
+		padding: 0; /* 3 */
+		border: none; /* 3 */
+		width: var(--self-width);
+		margin-right: calc(calc(var(--self-width) + var(--distance-from-main)) * -1);
+	}
+}
+
+/* Each time a sidenote anchor is encountered, increment the counter */
+.sidenote-anchor {
+	counter-increment: sidenote-counter;
+}
+
+/* Use a custom font for the sidenote numbers */
+.sidenote-anchor:after,
+.sidenote:before {
+	font-size: 16px;
+	position: relative;
+	/* font-family: "Spectral", serif; */
+}
+
+/* Fine-adjust the number position for the sidenote anchor */
+.sidenote-anchor:after {
+	content: counter(sidenote-counter);
+	top: -8px;
+	left: 1.6px;
+}
+
+/* Fine-adjust the number position for the sidenote */
+.sidenote:before {
+	content: counter(sidenote-counter) " ";
+	top: -8px;
 }
