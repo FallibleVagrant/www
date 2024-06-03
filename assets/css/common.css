@@ -133,7 +133,6 @@ hr {
 
 .infobox {
 	/* border: 2px #00875f solid; */
-	border: none;
 	padding: 20px 0px;
 	background-color: var(--accent-color);
 
