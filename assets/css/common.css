@@ -128,3 +128,35 @@ hr {
 	/* color: #00875f; */
 	color: #484848;
 }
+
+.infobox {
+	/* border: 2px #00875f solid; */
+	border: none;
+	padding: 20px 0px;
+	background-color: var(--accent-color);
+
+	/* Carefully cut a corner out of the block; leave space so it doesn't disrupt any drop-shadows if we have any. */
+	/* clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 25px); */
+	clip-path: polygon(30px 0, 0px 0px, 0px -200%, 200% -200%, 200% 200%, -200% 200%, -200% -200%, 0px -200%, 0% 25px);
+
+	/* animation: 1s 0.11s backwards expand-in cubic-bezier(.77,0,.18,1); */
+}
+
+.infobox > div {
+	padding: 4px 20px;
+	/* animation: 1s 0.15s backwards fade-in ease-out; */
+}
+
+.infobox header {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--off-white);
+	margin-bottom: 8px;
+}
+
+.pane {
+	color: var(--pane-border-color);
+	border: 1px solid var(--pane-border-color);
+	background-color: var(--pane-bg-color);
+}
