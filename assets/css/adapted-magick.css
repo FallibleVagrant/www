@@ -20,8 +20,6 @@ main {
 }
 
 main > header, main > section, main > footer {
-	border: 1px solid var(--pane-border-color);
-	background-color: var(--pane-bg-color);
 	padding: 20px 20px;
 	margin-bottom: 15px;
 }
