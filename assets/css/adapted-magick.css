@@ -50,7 +50,19 @@ img {
 	height: auto;
 }
 
-figure {
+/* For figures that are in a section, they are floated to the right like a sidenote. */
+section > figure {
+	display: inline-block;
+	padding: 20px 40px;
+
+	max-width: 30%;
+	margin: 0px auto;
+	margin-bottom: 10px;
+	float: right;
+}
+
+/* Figures that are their own will get a nice border. */
+main > figure {
 	display: inline-block;
 	border: 1px solid var(--pane-border-color);
 	background-color: var(--pane-bg-color);
@@ -62,7 +74,7 @@ figure {
 	text-align: center;
 }
 
-figcaption {
+main > figure figcaption {
 	margin-top: 10px;
 }
 
