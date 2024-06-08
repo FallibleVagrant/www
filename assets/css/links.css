@@ -44,8 +44,37 @@ li {
 
 	display: flex;
 	gap: 20px;
+
+	/* Hack to make descriptions position relative to parent. */
+	position: relative;
 }
 
 li a {
 	margin-right: auto;
+}
+
+.link-about-button:hover > summary {
+	list-style-type: disclosure-open;
+}
+
+.link-about-button:hover + .description {
+	display: block;
+}
+
+.description {
+	display: none;
+	position: absolute;
+	top: 30px;
+	right: 0px;
+
+	z-index: 1;
+}
+
+/* Keep description closed if the link-about-button is open. */
+.link-about-button[open] + .description {
+	display: none;
+}
+
+.link-about-button summary {
+	cursor: default;
 }
