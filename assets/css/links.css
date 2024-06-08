@@ -4,7 +4,7 @@ main {
 }
 
 .infobox {
-	width: min(470px, 80%);
+	width: min(470px, 90%);
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 20px;
@@ -43,14 +43,13 @@ li {
 	padding: 5px 0px;
 
 	display: flex;
-	gap: 20px;
+	/* gap: 20px; */
+	flex-flow: row wrap;
+	column-gap: 40px;
+	justify-content: space-between;
 
 	/* Hack to make descriptions position relative to parent. */
 	position: relative;
-}
-
-li a {
-	margin-right: auto;
 }
 
 .link-about-button:hover > summary {
@@ -64,7 +63,7 @@ li a {
 .description {
 	display: none;
 	position: absolute;
-	top: 30px;
+	top: 100%;		/* Position below the entirety of the parent element. */
 	right: 0px;
 
 	z-index: 1;
