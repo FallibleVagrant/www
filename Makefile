@@ -1,6 +1,6 @@
 # All of the pages we want to compile.
 pages := index.html about.html posts.html links.html projects.html
-posts := diving-for-undersea-cable-coordinate-data.html
+posts := finding-datasets-to-map-the-undersea-cable-network.html
 
 # The default rule.
 all: $(pages) $(posts)

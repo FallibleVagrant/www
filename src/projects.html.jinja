@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="assets/css/common.css" />
 		<link rel="stylesheet" href="assets/css/nav.css" />
 		<link rel="stylesheet" href="assets/css/footer.css" />
+		<link rel="stylesheet" href="assets/css/projects.css" />
 
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
@@ -23,12 +24,32 @@
 		<div class="container">
 			{% include "nav_header.frag.html" %}
 			<main class="inset">
-				<section>
-					<header>
-						Project Title Test.
-					</header>
-					Project Description Test.
-				</section>
+				<div id="two-column">
+					<section class="pane">
+						<header>
+							Project Title Test.
+						</header>
+						Project Description Test.
+					</section>
+					<section class="pane">
+						<header>
+							Project Title Test 2.
+						</header>
+						Project Description Test.
+					</section>
+					<section class="pane">
+						<header>
+							Project Title Test 3.
+						</header>
+						Project Description Test.
+					</section>
+					<section class="pane">
+						<header>
+							Project Title Test 4.
+						</header>
+						Project Description Test.
+					</section>
+				</div>
 			</main>
 			{% include "page_footer.frag.html" %}
 		</div>

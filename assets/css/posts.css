@@ -19,6 +19,7 @@ header > .header-date-container {
 	flex-flow: row wrap;
 	align-items: baseline;
 	column-gap: 50px;
+	row-gap: 3px;
 	justify-content: space-between;
 }
 
