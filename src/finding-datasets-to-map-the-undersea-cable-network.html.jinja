@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Finding Datasets to Map the Undersea Cable Network</title>
+		<!--
+		<link rel="preload" href="assets/fonts/Whisper-Regular.ttf" as="font" type="font/ttf" />
+		<link rel="preload" href="assets/fonts/Hack-Regular.ttf" as="font" type="font/ttf" />
+		<link rel="preload" href="assets/fonts/TerminusTTF-4.46.0.ttf" as="font" type="font/ttf" />
+		-->
+		<link rel="stylesheet" href="assets/css/common.css" />
+		<link rel="stylesheet" href="assets/css/nav.css" />
+		<link rel="stylesheet" href="assets/css/footer.css" />
+		<link rel="stylesheet" href="assets/css/adapted-magick.css" />
+
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+		<link rel="manifest" href="assets/img/site.webmanifest" />
+	</head>
+
+	<body>
+		<div class="container">
+			{% include "nav_header.frag.html" %}
+			<main class="inset">
+				<header class="pane">
+					<div class="header-date-container">
+						<h1>Finding Datasets to Map the Undersea Cable Network</h1>
+						<date>2024-05-30</date>
+					</div>
+					<div class="subtitle">Transmission 1</div>
+				</header>
+				<section class="pane">
+					<p>
+						While working on <a href="https://github.com/falliblevagrant/geoconn/" target="_blank">geoconn</a>,
+						 I had the idea to layer the global undersea cable infrastructure over the attack map. It wouldn't have functionality, but it's too often forgotten that these cables 
+						<a href="https://en.wikipedia.org/wiki/Submarine_communications_cable#Importance_of_submarine_cables" target="_blank">make the global Internet possible</a>
+						.
+					</p>
+					<figure>
+						<img src="assets/img/submarine_cable_map.png" />
+						<figcaption>Something like this.</figcaption>
+					</figure>
+					<p>As far as I am aware, however, there is little public data on these cable routes. The wikimedia graphic to the right uses data from 2015 provided by one Greg Mahlknecht, who has since lost time for the project. His interactive map website links to a currently-unreachable site, which <a href="http://web.archive.org/" target="_blank">Wayback Machine</a> reports as redirecting to another site, which hosts the data behind a sign-up.</p>
+					<p>There are other data sources maintained by governmental entities, but all are outdated or incomplete. Availability is poor.</p>
+					<p>I gave up the initial search. I wanted the data for minor cosmetic reasons.</p>
+					<p><span class="sidenote-anchor">Several months later and although the original project now languishes</span><span class="sidenote">Development on geoconn has halted for various reasons. I intend to replace it with something that has better architecture.</span>, I found a lead and thought to pursue it. That isn't to say I found anything useful. This article does not end with a link to a complete and accurate database.</p>
+					<p>I remembered my previous struggles with finding a dataset, and decided to sacrifice more bandwidth to the search engine gods now that some months had passed. I did found something. Visualization projects referenced an open dataset by TeleGeography.</p>
+					<p>TeleGeography runs <a href="submarinecablemap.com" target="_blank">submarinecablemap.com</a>. They are one of several organizations that compile coordinate data on the cables, available at their discretion. As it turns out, they had a Github repository until 2022 hosting the source code of their website and the data they used to create the map.</p>
+					<p>For some reason they deleted the repository, but they forgot the web archives. You can view the full repo <a href="http://web.archive.org/web/20221110120103/https://github.com/telegeography/www.submarinecablemap.com" target="_blank">here</a>, then download it <a href="http://web.archive.org/web/20220816215930/https://codeload.github.com/telegeography/www.submarinecablemap.com/zip/refs/heads/master" target="_blank">here</a>, the cable coordinates <a href="http://web.archive.org/web/20220902123745/https://raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/cable/cable-geo.json" target="_blank">here</a>, and landing points <a href="http://web.archive.org/web/20220329115857/https://raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/landing-point/landing-point-geo.json" target="_blank">here</a>.</p>
+					<p>But, uh, none of that matters. <span class="sidenote-anchor">Well, maybe.</span> As of time of writing, all of this data is available to grab directly from <a href="https://submarinecablemap.com" target="_blank">submarinecablemap.com</a> -- through their web API. Not a downloads page. Plus the data is stylized i.e. inaccurate. <span class="sidenote">But does the license still apply to data from the repo? It's being distributed by someone other than TeleGeography, and it might not apply to the original coordinate data since they are in a pastebin and not the repo. But there is a creative commons license on the repository. Consult your local lawyer before any hijinks. Also TeleGeography may or may not already provide the data under the same license, but I didn't find any mention of that in present day.</span></p>
+					<p>An idea struck. Distributing TeleGeography's data is probably illegal if you aren't the Internet Archive, but distributing a script to scrape the same data is fine. This isn't a new concept. In fact, the script does not need to be more complex than a call to cURL in some cases; organizations open their APIs so the online interactive maps can work.</p>
+					<p>To manually download TeleGeography's stylized data fresh from the server, navigate to <a href="https://submarinecablemap.com" target="_blank">submarinecablemap.com</a> and open the browser's developer tools. Go to the networking tab and filter by XHR. The files of interest are 'cable-geo.json' and 'landing-point-geo.json'. The path to the files is the same as the API in the archived repository.</p>
+					<p>Other interactive maps are available. I believe <a href="http://he.net/" target="_blank">Hurricane Electric's 3D map</a> uses the same data as TeleGeography, but I'm too lazy to verify against the data inlined in javascript.</p>
+					<p>One last thing.</p>
+					<p>OceanIQ has the most high-fidelity interactive map out of the online maps I've seen. If decoding ArcGIS's Geometry objects sounds like a good time, I invite you to try a little reversing.</p>
+				</section>
+			</main>
+			{% include "page_footer.frag.html" %}
+		</div>
+	</body>
+</html>
