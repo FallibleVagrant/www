@@ -318,3 +318,14 @@ ul {
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
+
+li {
+}
+
+li time:before {
+	content: '[';
+}
+
+li time:after {
+	content: ']';
+}
