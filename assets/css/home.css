@@ -30,6 +30,9 @@ main {
 		animation: 300s 1.6s infinite glitch-randomly;
 		text-align: center;
 	}
+
+	/* For single-column on mobile. */
+	min-height: 200px;
 }
 
 @keyframes glitch-randomly {
