@@ -2,8 +2,6 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
-	margin-right: 40px;
-	margin-left: 40px;
 }
 
 .column {
@@ -317,6 +315,12 @@ main {
 ul {
 	margin-top: 8px;
 	margin-bottom: 8px;
+}
+
+@media (max-width: 1050px) {
+	ul {
+		padding-left: 20px;
+	}
 }
 
 li {
