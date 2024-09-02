@@ -170,7 +170,7 @@ nav a:hover {
 }
 
 /* Switch to mobile-nav systems. */
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
 	#desktop-navbar {
 		display: none;
 	}

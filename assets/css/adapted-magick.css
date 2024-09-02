@@ -59,6 +59,18 @@ section > figure {
 	float: right;
 }
 
+/* For figures on tiny screens, they take up the full width. */
+@media (max-width: 800px) {
+	section > figure {
+		padding: 0px 20px;
+	}
+}
+@media (max-width: 600px) {
+	section > figure {
+		max-width: 100%;
+	}
+}
+
 /* Figures that are their own will get a nice border. */
 main > figure {
 	display: inline-block;
@@ -100,6 +112,13 @@ main > figure figcaption {
 	/* line-height: 1.2; /1* 6 *1/ */
 }
 
+/* On tiny screens, sidenotes take up the entire width. */
+@media (max-width: 790px) {
+	.sidenote, aside {
+		width: 90%;
+	}
+}
+
 /* Prevent double top margins */
 aside h1, aside h2, aside h3, aside h4 {
 	margin-top: 0;
@@ -114,9 +133,9 @@ aside h1, aside h2, aside h3, aside h4 {
 */
 /* Sadly, CSS does not support var() and rem in media queries, so we have to hardcode pixels. */
 /* This will break if the main column width is changed without adjusting this media query.    */
-@media (min-width: calc(1500px)) {
+@media (min-width: calc(1700px)) {
 	.sidenote {
-		--distance-from-main: 48px; /* 1 */
+		--distance-from-main: 80px; /* 1 */
 		--self-width: min(calc((100vw - 1000px)/2 - (var(--distance-from-main))), 40%); /* 2 */
 		margin: 0; /* 3 */
 		padding: 0; /* 3 */
