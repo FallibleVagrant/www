@@ -1,6 +1,7 @@
 main {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	/*												v---- NOTE: Magic number is magic. */
+	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
 	gap: 20px;
 }
 
