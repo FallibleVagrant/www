@@ -1,7 +1,7 @@
 main {
 	display: grid;
 	/*												v---- NOTE: Magic number is magic. */
-	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 20px;
 }
 
